@@ -1,0 +1,11 @@
+route:
+  receiver: 'email-alert'
+
+receivers:
+  - name: 'email-alert'
+    email_configs:
+      - to: email
+        from: email
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'email'
+        auth_password: 'password'

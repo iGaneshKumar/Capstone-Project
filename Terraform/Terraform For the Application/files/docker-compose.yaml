@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  web:
+    container_name: capstone-prod
+    image: iganeshkumar/capstone-prod
+    ports:
+      - "80:80"

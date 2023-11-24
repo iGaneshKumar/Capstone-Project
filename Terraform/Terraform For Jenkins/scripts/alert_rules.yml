@@ -1,0 +1,6 @@
+groups:
+  - name: Email
+    rules:
+    - alert: Server is Down
+      expr: up == 0
+      for: 5s

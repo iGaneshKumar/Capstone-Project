@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_ID = 'Dockerhub'
+    }
+
+    stages {
+        stage('Build and Push') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: "${DOCKER_ID}",
+                passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')])
+                {
+                sh 'echo \$DOCKER_PASSWORD | docker login -u \$DOCKER_USERNAME --password-stdin docker.io'
+                }
+                script {
+                    sh 'sudo chmod +x build.sh'
+                    sh 'sudo chmod +x build_and_push.sh'
+                    sh './build_and_push.sh'
+                }
+            }
+        }
+        stage('Provisioning EC2 using Terraform and Deploying the Application') {
+           steps {
+                dir('./Terraform/') {
+            script {
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}
+}
+}
