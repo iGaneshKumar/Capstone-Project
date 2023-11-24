@@ -64,7 +64,7 @@ In this project below are the Technologies and Tools involved:
 - We have also configure Prometheus, AlertManager using yml file.
 - As soon as the Node Exporter went down we were notified with an email.
 
-**You can find all the configuration files here in this repository under Capstone Project.**
+**You can find all the configuration files here in this repository.**
 
 ***I have also documented everything in a video format, if you could spare some time review it here https://iganeshkumar.duckdns.org/local/about/project/project.html***
 
