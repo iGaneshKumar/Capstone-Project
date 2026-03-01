@@ -66,6 +66,4 @@ In this project below are the Technologies and Tools involved:
 
 **You can find all the configuration files here in this repository.**
 
-***I have also documented everything in a video format, if you could spare some time review it here https://iganeshkumar.duckdns.org/local/about/project/project.html***
-
 
